@@ -70,6 +70,13 @@ git config core.hooksPath .githooks
 
 After enabling, the `pre-push` hook runs `./scripts/presubmit.sh` and blocks push if build/tests fail.
 
+Automatic PR presubmit is configured in:
+
+- `.github/workflows/pr-presubmit.yml`
+
+It runs `./scripts/presubmit.sh` on every non-draft pull request update.
+To enforce it before merge, enable branch protection on `main` and require the `PR Presubmit` status check.
+
 ---
 
 ## Learning path
@@ -142,6 +149,9 @@ Start the web server first; the load test connects to it and prints elapsed time
 
 ```text
 .
+├── .github/
+│   └── workflows/
+│       └── pr-presubmit.yml # CI presubmit on pull requests
 ├── .githooks/
 │   └── pre-push          # Runs presubmit before push
 ├── CMakeLists.txt      # Build definition
