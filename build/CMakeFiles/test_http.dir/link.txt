@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_http.dir/tests/test_http.c.o -o test_http  libweb_server_core.a

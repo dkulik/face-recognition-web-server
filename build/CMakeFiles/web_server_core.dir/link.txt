@@ -1,0 +1,2 @@
+/usr/bin/ar qc libweb_server_core.a CMakeFiles/web_server_core.dir/src/http.c.o CMakeFiles/web_server_core.dir/src/static_assets.c.o CMakeFiles/web_server_core.dir/src/router.c.o
+/usr/bin/ranlib libweb_server_core.a

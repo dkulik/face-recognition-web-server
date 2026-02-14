@@ -1,0 +1,25 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/pixel/workspace/proj1/src/http.c" "CMakeFiles/web_server_core.dir/src/http.c.o" "gcc" "CMakeFiles/web_server_core.dir/src/http.c.o.d"
+  "/Users/pixel/workspace/proj1/src/router.c" "CMakeFiles/web_server_core.dir/src/router.c.o" "gcc" "CMakeFiles/web_server_core.dir/src/router.c.o.d"
+  "/Users/pixel/workspace/proj1/src/static_assets.c" "CMakeFiles/web_server_core.dir/src/static_assets.c.o" "gcc" "CMakeFiles/web_server_core.dir/src/static_assets.c.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
