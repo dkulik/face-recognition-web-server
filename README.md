@@ -74,7 +74,7 @@ Automatic PR presubmit is configured in:
 
 - `.github/workflows/pr-presubmit.yml`
 
-It runs `./scripts/presubmit.sh` on every non-draft pull request update.
+It runs `./scripts/presubmit.sh` on every pull request update.
 To enforce it before merge, enable branch protection on `main` and require the `PR Presubmit` status check.
 
 ---
@@ -142,6 +142,71 @@ Start the web server first; the load test connects to it and prints elapsed time
 - C11 compiler (e.g. GCC, Clang).
 - CMake 3.16+.
 - POSIX environment (Linux, macOS, etc.); the load test uses `pthreads`.
+
+---
+
+## How to contribute
+
+### What should be installed
+
+- Git
+- CMake 3.16+
+- C11 compiler (`gcc` or `clang`)
+- Make or Ninja build tool
+
+### First-time setup
+
+```bash
+git clone git@github.com:dkulik/face-recognition-web-server.git
+cd face-recognition-web-server
+
+# Optional but recommended: block pushes when presubmit fails
+git config core.hooksPath .githooks
+```
+
+### Basic commands
+
+```bash
+# Configure + build (default build dir)
+cmake -S . -B build
+cmake --build build
+
+# Run server
+./build/web_server
+
+# Run tests
+ctest --test-dir build --output-on-failure
+
+# Full gate (same as CI)
+./scripts/presubmit.sh
+```
+
+### Typical contribution workflow
+
+1. Create a branch from latest `main`:
+```bash
+git checkout main
+git pull --ff-only origin main
+git checkout -b feat/short-description
+```
+2. Implement changes and run checks:
+```bash
+./scripts/presubmit.sh
+```
+3. Commit and push:
+```bash
+git add .
+git commit -m "Describe your change"
+git push -u origin feat/short-description
+```
+4. Open a pull request into `main`.
+5. Wait for `PR Presubmit` to pass, then merge via PR.
+
+### Common use cases
+
+- Feature work: new endpoint, frontend behavior, or architecture cleanup.
+- Bug fix: reproduce issue, add/update tests, implement fix, run presubmit.
+- Docs update: keep `README.md` and `docs/` in sync with code behavior.
 
 ---
 
