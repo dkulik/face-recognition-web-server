@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_router.dir/tests/test_router.c.o -o test_router  libweb_server_core.a

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f7fb;
+  color: #111827;
+  padding: 20px;
+}
+
+.card {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.label {
+  font-weight: 700;
+  padding: 8px;
+  background: #fff;
+}
+
+video,
+img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #111827;
+}
+
+#status {
+  margin: 10px 0 0;
+  color: #1d4ed8;
+}

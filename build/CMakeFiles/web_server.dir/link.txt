@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/web_server.dir/src/main.c.o -o web_server  libweb_server_core.a

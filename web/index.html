@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Webcam Relay</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Webcam Relay</h1>
+    <p>Camera frames are uploaded to the server and then fetched back.</p>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="label">Direct Camera</div>
+        <video id="localVideo" autoplay muted playsinline></video>
+      </div>
+      <div class="panel">
+        <div class="label">From Server</div>
+        <img id="remoteImage" alt="server stream">
+      </div>
+    </section>
+
+    <p id="status">Starting camera...</p>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

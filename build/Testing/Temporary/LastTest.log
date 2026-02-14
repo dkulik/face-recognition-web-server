@@ -1,0 +1,51 @@
+Start testing: Feb 14 17:28 CET
+----------------------------------------------------------
+1/3 Testing: test_http
+1/3 Test: test_http
+Command: "/Users/pixel/workspace/proj1/build/test_http"
+Directory: /Users/pixel/workspace/proj1/build
+"test_http" start time: Feb 14 17:28 CET
+Output:
+----------------------------------------------------------
+test_http: OK
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_http" end time: Feb 14 17:28 CET
+"test_http" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: test_static_assets
+2/3 Test: test_static_assets
+Command: "/Users/pixel/workspace/proj1/build/test_static_assets"
+Directory: /Users/pixel/workspace/proj1/build
+"test_static_assets" start time: Feb 14 17:28 CET
+Output:
+----------------------------------------------------------
+test_static_assets: OK
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_static_assets" end time: Feb 14 17:28 CET
+"test_static_assets" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: test_router
+3/3 Test: test_router
+Command: "/Users/pixel/workspace/proj1/build/test_router"
+Directory: /Users/pixel/workspace/proj1/build
+"test_router" start time: Feb 14 17:28 CET
+Output:
+----------------------------------------------------------
+test_router: OK
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_router" end time: Feb 14 17:28 CET
+"test_router" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 14 17:28 CET

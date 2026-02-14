@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_static_assets.dir/tests/test_static_assets.c.o -o test_static_assets  libweb_server_core.a
