@@ -17,6 +17,29 @@ function toJpegBlob() {
   return new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', JPEG_QUALITY));
 }
 
+function getUserMediaCompat(constraints) {
+  if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
+    return navigator.mediaDevices.getUserMedia(constraints);
+  }
+
+  const legacyGetUserMedia =
+    navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia;
+
+  if (typeof legacyGetUserMedia === 'function') {
+    return new Promise((resolve, reject) => {
+      legacyGetUserMedia.call(navigator, constraints, resolve, reject);
+    });
+  }
+
+  const contextHint = window.isSecureContext
+    ? ''
+    : ' This page must be opened on https:// or localhost.';
+  throw new Error(`getUserMedia is not available in this browser.${contextHint}`);
+}
+
 async function uploadFrame() {
   if (uploadBusy || !localVideo.videoWidth || !localVideo.videoHeight) {
     return;
@@ -76,7 +99,7 @@ async function downloadFrame() {
 
 async function start() {
   try {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+    const stream = await getUserMediaCompat({ video: true, audio: false });
     localVideo.srcObject = stream;
     await localVideo.play();
 

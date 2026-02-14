@@ -52,6 +52,24 @@ ctest -R test_static_assets --output-on-failure
 ctest -R test_router --output-on-failure
 ```
 
+## Presubmit check
+
+Run the full presubmit locally:
+
+```bash
+./scripts/presubmit.sh
+```
+
+By default this uses an isolated build directory: `.build/presubmit`.
+
+Enable automatic presubmit on `git push` (one-time setup per clone):
+
+```bash
+git config core.hooksPath .githooks
+```
+
+After enabling, the `pre-push` hook runs `./scripts/presubmit.sh` and blocks push if build/tests fail.
+
 ---
 
 ## Learning path
@@ -124,11 +142,15 @@ Start the web server first; the load test connects to it and prints elapsed time
 
 ```text
 .
+├── .githooks/
+│   └── pre-push          # Runs presubmit before push
 ├── CMakeLists.txt      # Build definition
 ├── README.md           # This file
 ├── docs/
 │   ├── SERVER.md       # Server internals (learnable)
 │   └── LOAD_TEST.md    # Load test internals (learnable)
+├── scripts/
+│   └── presubmit.sh    # Build + test gate
 ├── tests/
 │   ├── test_http.c
 │   ├── test_static_assets.c

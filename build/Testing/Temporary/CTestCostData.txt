@@ -1,4 +1,4 @@
-test_http 2 0.000603958
-test_static_assets 2 0.000847063
-test_router 2 0.00074027
+test_http 3 0.000452667
+test_static_assets 3 0.000561611
+test_router 3 0.000466153
 ---
